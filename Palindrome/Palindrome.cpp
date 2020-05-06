@@ -3,7 +3,7 @@
 
 using namespace std;
 
-bool isPalindrome(string &pal, char first, char last) {
+bool isPalindrome(string &pal, int first, int last) {
     first = pal[0];
     last = pal.length - 1;
     int i;
@@ -28,6 +28,6 @@ bool isPalindrome(string &pal, char first, char last) {
 int main()
 {
     cout << "Hannah" << endl;
-    isPalindrome();
+    isPalindrome;
 }
 
