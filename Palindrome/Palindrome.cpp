@@ -3,31 +3,35 @@
 
 using namespace std;
 
-bool isPalindrome(string &pal, int first, int last) {
-    first = pal[0];
-    last = pal.length - 1;
-    int i;
-
+bool isPalindrome(string pal, int firstChar, int lastChar)
+{
     // base case 
     // if the string is 1 or 0 characters long
-    if (pal.length == 0 || pal.length == 1)
-        return true;
-    // if the it is not a Palindrome
-    if (first != last) {
-        return false;
-    }
+    if (firstChar == lastChar || firstChar == lastChar + 1)
+        cout << " This is a Palindrome" << endl;
+    return true;
 
     // recursive case
-    // Check the first and last characters, then move on to the next closest together
-    else {
-        if (first == last)
-            isPalindrome(pal, first + 1, last - 1);
+    if (pal[firstChar] == pal[lastChar])
+    {
+        return isPalindrome(pal, firstChar + 1, lastChar - 1);
+    }
+
+    // check if it is not a Palindrome
+    if (pal[firstChar] != pal[lastChar])
+    {
+        cout << "This word is not a Palindrome" << endl;
+        return false;
     }
 }
 
 int main()
-{
-    cout << "Hannah" << endl;
-    isPalindrome;
+{   
+    string pal;
+    cout << "Write a word: " << endl;
+    cin >> pal;
+    int first = 0;
+    int last = pal.length() - 1;
+    isPalindrome(pal, first, last);
 }
 
